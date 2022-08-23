@@ -1,0 +1,15 @@
+# Specify the version of Docker Compose
+version: "3"
+
+# Service == A Type of Container
+services:
+  redis-server:
+    image: "redis"
+    restart: always
+
+  node-app:
+    # Look in the current directory for docker file
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
